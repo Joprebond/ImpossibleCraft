@@ -1,0 +1,618 @@
+{
+  "conditions": {
+    "[VIEWER] Set Max Number of Mobs for Raid": {
+      "variableName": "viewer-max-raid-mobs",
+      "variableInput": "30",
+      "isGlobal": true,
+      "type": "variableInsert"
+    },
+    "[VIEWER] Set Mob Spawn Command": {
+      "variableName": "viewer-mob-spawn-command",
+      "variableInput": "/execute at @s run summon $viewer-spawn-mob ~ ~1 ~ {Glowing:1b,PersistenceRequired:1b,CustomName:'{\"text\":\"$viewer-subscriber-name\"}',IsImmuneToZombification:1b,ArmorItems:[{},{},{},{Count:1b,id:\"$viewer-mob-helmet\"}]}",
+      "type": "variableInsert"
+    },
+    "[VIEWER] Tier One Spawn Mob Name": {
+      "variableName": "spawn-mob-name",
+      "variableInput": "minecraft:zombie",
+      "type": "variableInsert"
+    },
+    "[VIEWER] Tier One Subscription": {
+      "variableName": "sub_plan",
+      "variableResult": "1000",
+      "type": "variableCheck"
+    },
+    "[VIEWER] Tier Prime Spawn Mob Name": {
+      "variableName": "spawn-mob-name",
+      "variableInput": "minecraft:zombie",
+      "type": "variableInsert"
+    },
+    "[VIEWER] Tier Prime Subscription": {
+      "variableName": "sub_plan",
+      "variableResult": "prime",
+      "type": "variableCheck"
+    },
+    "[VIEWER] Tier Three Spawn Mob Name": {
+      "variableName": "spawn-mob-name",
+      "variableInput": "minecraft:piglin_brute",
+      "type": "variableInsert"
+    },
+    "[VIEWER] Tier Three Subscription": {
+      "variableName": "sub_plan",
+      "variableResult": "3000",
+      "type": "variableCheck"
+    },
+    "[VIEWER] Tier Two Spawn Mob Name": {
+      "variableName": "spawn-mob-name",
+      "variableInput": "minecraft:wither_skeleton",
+      "isGlobal": true,
+      "type": "variableInsert"
+    },
+    "[VIEWER] Tier Two Subscription": {
+      "variableName": "sub_plan",
+      "variableResult": "2000",
+      "type": "variableCheck"
+    },
+    "[VIEWER] Viewer Subscriber Five Years": {
+      "optionalVariableName": "viewer-subscriber-months",
+      "min": 49.0,
+      "type": "range"
+    },
+    "[VIEWER] Viewer Subscriber One Year": {
+      "optionalVariableName": "viewer-subscriber-months",
+      "min": 1.0,
+      "max": 12.0,
+      "type": "range"
+    },
+    "[VIEWER] Viewer Subscriber Three Years": {
+      "optionalVariableName": "viewer-subscriber-months",
+      "min": 25.0,
+      "max": 36.0,
+      "type": "range"
+    },
+    "[VIEWER] Viewer Subscriber Two Years": {
+      "optionalVariableName": "viewer-subscriber-months",
+      "min": 13.0,
+      "max": 24.0,
+      "type": "range"
+    },
+    "[VIEWER] Viewer Subscribrer Four Years": {
+      "optionalVariableName": "viewer-subscriber-months",
+      "min": 37.0,
+      "max": 48.0,
+      "type": "range"
+    }
+  },
+  "outcomes": {},
+  "events": {
+    "[VIEWER] Calculate Subscription Month based event": {
+      "conditions": [],
+      "outcomes": [
+        {
+          "events": [
+            {
+              "name": "One Year",
+              "constantName": "[VIEWER] Process Viewer One Year Sub",
+              "conditions": [],
+              "outcomes": [],
+              "allowsOtherEventsToTrigger": true
+            },
+            {
+              "name": "Two Years",
+              "constantName": "[VIEWER] Process Viewer Two Year Sub",
+              "conditions": [],
+              "outcomes": [],
+              "allowsOtherEventsToTrigger": true
+            },
+            {
+              "name": "Three Years",
+              "constantName": "[VIEWER] Process Viewer Three year Sub",
+              "conditions": [],
+              "outcomes": [],
+              "allowsOtherEventsToTrigger": true
+            },
+            {
+              "name": "Four Years",
+              "constantName": "[VIEWER] Process Viewer Four Year Sub",
+              "conditions": [],
+              "outcomes": [],
+              "allowsOtherEventsToTrigger": true
+            },
+            {
+              "name": "Five Years",
+              "constantName": "[VIEWER] Process Viewer Five Year Sub",
+              "conditions": [],
+              "outcomes": [],
+              "allowsOtherEventsToTrigger": true
+            }
+          ],
+          "type": "event"
+        }
+      ],
+      "allowsOtherEventsToTrigger": true
+    },
+    "[VIEWER] Calculate Total XP": {
+      "conditions": [],
+      "outcomes": [],
+      "allowsOtherEventsToTrigger": true
+    },
+    "[VIEWER] Determine Subcriber Info": {
+      "conditions": [
+        {
+          "variableName": "viewer-subscriber-name",
+          "variableInput": "$user",
+          "isGlobal": true,
+          "type": "variableInsert",
+          "displayName": "Subscriber Name"
+        },
+        {
+          "variableName": "viewer-subscriber-months",
+          "variableInput": "$amount",
+          "isGlobal": true,
+          "type": "variableInsert",
+          "displayName": "Set Subscriber sub time"
+        }
+      ],
+      "outcomes": [
+        {
+          "events": [
+            {
+              "name": "Prime Subscriptions",
+              "constantName": "[VIEWER] Process Prime Subscription",
+              "conditions": [],
+              "outcomes": [],
+              "allowsOtherEventsToTrigger": true
+            },
+            {
+              "name": "Tier One Subscription",
+              "constantName": "[VIEWER] Process Tier One Subscriber",
+              "conditions": [],
+              "outcomes": [],
+              "allowsOtherEventsToTrigger": true
+            },
+            {
+              "name": "Tier Two Subscription",
+              "constantName": "[VIEWER] Proces Tier Two Subscriber",
+              "conditions": [],
+              "outcomes": [],
+              "allowsOtherEventsToTrigger": true
+            },
+            {
+              "name": "Tier Three Subscriber",
+              "constantName": "[VIEWER] Process Tier Three Subscriber",
+              "conditions": [],
+              "outcomes": [],
+              "allowsOtherEventsToTrigger": true
+            }
+          ],
+          "type": "event"
+        }
+      ],
+      "allowsOtherEventsToTrigger": true
+    },
+    "[VIEWER] Initialize Viewer": {
+      "conditions": [
+        {
+          "name": "[VIEWER] Set Max Number of Mobs for Raid",
+          "type": "constant",
+          "displayName": "Set Max Raid Mobs"
+        },
+        {
+          "variableName": "viewer-raid-mob-count",
+          "type": "variableRemove",
+          "displayName": "Reset Mob Count"
+        },
+        {
+          "variableName": "viewer-raid-mob-user",
+          "type": "variableRemove",
+          "displayName": "Remove Mob Raider"
+        },
+        {
+          "variableName": "viewer-total-raid-count",
+          "type": "variableRemove",
+          "displayName": "Remove Total Raid Amount"
+        }
+      ],
+      "outcomes": [],
+      "allowsOtherEventsToTrigger": true
+    },
+    "[VIEWER] Proces Tier Two Subscriber": {
+      "conditions": [
+        {
+          "name": "[VIEWER] Tier Two Subscription",
+          "type": "constant",
+          "displayName": "Check For Tier 2 Subscription"
+        },
+        {
+          "variableName": "viewer-subscription-tier",
+          "variableInput": "2",
+          "type": "variableInsert",
+          "displayName": "Set Subscription Tier"
+        },
+        {
+          "variableName": "xp-gained",
+          "variableInput": "20",
+          "isGlobal": true,
+          "type": "variableInsert",
+          "displayName": "Set XP For Event"
+        },
+        {
+          "variableName": "viewer-spawn-mob",
+          "variableInput": "minecraft:wither_skeleton",
+          "type": "variableInsert",
+          "displayName": "Set Spawnable mob"
+        }
+      ],
+      "outcomes": [],
+      "allowsOtherEventsToTrigger": true
+    },
+    "[VIEWER] Process Prime Subscription": {
+      "conditions": [
+        {
+          "name": "[VIEWER] Tier Prime Subscription",
+          "type": "constant",
+          "displayName": "Check For Prime Sub"
+        },
+        {
+          "variableName": "viewer-subscription-tier",
+          "variableInput": "1",
+          "type": "variableInsert",
+          "displayName": "Set Subscription Tier"
+        },
+        {
+          "variableName": "xp-gained",
+          "variableInput": "10",
+          "isGlobal": true,
+          "type": "variableInsert",
+          "displayName": "Set XP For Event"
+        },
+        {
+          "variableName": "viewer-spawn-mob",
+          "variableInput": "minecraft:skeleton",
+          "type": "variableInsert",
+          "displayName": "Set Spawn mob name"
+        }
+      ],
+      "outcomes": [],
+      "allowsOtherEventsToTrigger": true
+    },
+    "[VIEWER] Process Raid Mob": {
+      "conditions": [
+        {
+          "condition": {
+            "optionalVariableName": "raiders",
+            "minVar": "$viewer-max-raid-mobs",
+            "type": "range",
+            "displayName": "Check For max number of mobs to spawn"
+          },
+          "passCondition": {
+            "variableName": "viewer-raid-mob-count",
+            "variableInput": "$viewer-max-raid-mobs",
+            "type": "variableInsert",
+            "displayName": "Cap The number of raid mobs to max"
+          },
+          "failCondition": {
+            "variableName": "viewer-raid-mob-count",
+            "variableInput": "$raiders",
+            "type": "variableInsert",
+            "displayName": "Set the number of mobs to spawn equal to the raid count"
+          },
+          "type": "conditional",
+          "displayName": "Set Max Amount of Raiders"
+        },
+        {
+          "variableName": "viewer-total-raid-count",
+          "variableInput": "$raiders",
+          "type": "variableInsert",
+          "displayName": "Capture the number of raiders"
+        },
+        {
+          "variableName": "viewer-raid-mob-user",
+          "variableInput": "$user",
+          "type": "variableInsert",
+          "displayName": "Capture the name of the raider"
+        },
+        {
+          "variableName": "xp-gained",
+          "variableInput": "15",
+          "isGlobal": true,
+          "type": "variableInsert",
+          "displayName": "Set XP Gained from the Raid"
+        }
+      ],
+      "outcomes": [
+        {
+          "times": "$viewer-raid-mob-count",
+          "outcome": {
+            "events": [
+              {
+                "name": "Summon Raid Mob",
+                "constantName": "[VIEWER] Spawn Raid or Follow Mob",
+                "conditions": [],
+                "outcomes": [],
+                "allowsOtherEventsToTrigger": true
+              }
+            ],
+            "type": "event"
+          },
+          "type": "repeat",
+          "displayName": "Loop Through to summon the mobs"
+        },
+        {
+          "events": [
+            {
+              "name": "Add the XP to the stream XP",
+              "constantName": "[Events] Add XP",
+              "conditions": [],
+              "outcomes": [],
+              "allowsOtherEventsToTrigger": true
+            }
+          ],
+          "type": "event"
+        }
+      ],
+      "allowsOtherEventsToTrigger": true
+    },
+    "[VIEWER] Process Subscriber Action": {
+      "conditions": [],
+      "outcomes": [
+        {
+          "events": [
+            {
+              "name": "Capture Subscriber Information",
+              "constantName": "[VIEWER] Determine Subcriber Info",
+              "conditions": [],
+              "outcomes": [],
+              "allowsOtherEventsToTrigger": true
+            },
+            {
+              "name": "Do the Processing of Month based Actions",
+              "constantName": "[VIEWER] Calculate Subscription Month based event",
+              "conditions": [],
+              "outcomes": [],
+              "allowsOtherEventsToTrigger": true
+            },
+            {
+              "name": "Spawn the Viewer Mobs",
+              "constantName": "[VIEWER] Spawn Viewer Action Mobs",
+              "conditions": [],
+              "outcomes": [],
+              "allowsOtherEventsToTrigger": true
+            },
+            {
+              "name": "Add XP to Total",
+              "constantName": "[Events] Add XP",
+              "conditions": [],
+              "outcomes": [],
+              "allowsOtherEventsToTrigger": true
+            }
+          ],
+          "type": "event"
+        }
+      ],
+      "allowsOtherEventsToTrigger": true
+    },
+    "[VIEWER] Process Tier One Subscriber": {
+      "conditions": [
+        {
+          "name": "[VIEWER] Tier One Subscription",
+          "type": "constant",
+          "displayName": "Check For Tier One Subscriber"
+        },
+        {
+          "variableName": "viewer-subscription-tier",
+          "variableInput": "1",
+          "type": "variableInsert",
+          "displayName": "Set Subscription Tier"
+        },
+        {
+          "variableName": "xp-gained",
+          "variableInput": "10",
+          "isGlobal": true,
+          "type": "variableInsert",
+          "displayName": "Set XP Gained"
+        },
+        {
+          "variableName": "viewer-spawn-mob",
+          "variableInput": "minecraft:zombie",
+          "type": "variableInsert",
+          "displayName": "Set Spawn Mob Name"
+        }
+      ],
+      "outcomes": [],
+      "allowsOtherEventsToTrigger": true
+    },
+    "[VIEWER] Process Tier Three Subscriber": {
+      "conditions": [
+        {
+          "name": "[VIEWER] Tier Three Subscription",
+          "type": "constant",
+          "displayName": "Check For Tier three subscription"
+        },
+        {
+          "variableName": "viewer-subscription-tier",
+          "variableInput": "3",
+          "type": "variableInsert",
+          "displayName": "Set Subscription Tier"
+        },
+        {
+          "variableName": "xp-gained",
+          "variableInput": "30",
+          "isGlobal": true,
+          "type": "variableInsert",
+          "displayName": "Assign XP Gained For Spawn"
+        },
+        {
+          "variableName": "viewer-spawn-mob",
+          "variableInput": "minecraft:piglin_brute",
+          "type": "variableInsert",
+          "displayName": "Set Mob spawn Name"
+        }
+      ],
+      "outcomes": [],
+      "allowsOtherEventsToTrigger": true
+    },
+    "[VIEWER] Process Viewer Five Year Sub": {
+      "conditions": [
+        {
+          "name": "[VIEWER] Viewer Subscriber Five Years",
+          "type": "constant",
+          "displayName": "Check for Five Year Sub"
+        },
+        {
+          "variableName": "viewer-mob-multiplier",
+          "variableInput": "5",
+          "type": "variableInsert",
+          "displayName": "Set Mob Spawn Multiplier"
+        },
+        {
+          "variableName": "viewer-mob-helmet",
+          "variableInput": "id:netherite_helmet",
+          "type": "variableInsert",
+          "displayName": "Set Spawn Helmet"
+        }
+      ],
+      "outcomes": [],
+      "allowsOtherEventsToTrigger": true
+    },
+    "[VIEWER] Process Viewer Four Year Sub": {
+      "conditions": [
+        {
+          "name": "[VIEWER] Viewer Subscribrer Four Years",
+          "type": "constant",
+          "displayName": "Check For Four Year Sub"
+        },
+        {
+          "variableName": "viewer-mob-multiplier",
+          "variableInput": "4",
+          "type": "variableInsert",
+          "displayName": "Set Mob Multiplier"
+        },
+        {
+          "variableName": "viewer-mob-helmet",
+          "variableInput": "minecraft:diamond_helmet",
+          "type": "variableInsert",
+          "displayName": "Set Mob Spawn Helmet"
+        }
+      ],
+      "outcomes": [],
+      "allowsOtherEventsToTrigger": true
+    },
+    "[VIEWER] Process Viewer One Year Sub": {
+      "conditions": [
+        {
+          "name": "[VIEWER] Viewer Subscriber One Year",
+          "type": "constant",
+          "displayName": "Check for one year subscription"
+        },
+        {
+          "variableName": "viewer-mob-multiplier",
+          "variableInput": "1",
+          "type": "variableInsert",
+          "displayName": "Set Mob Spawn Number Multiplier"
+        },
+        {
+          "variableName": "viewer-mob-helmet",
+          "variableInput": "minecraft:turtle_helmet",
+          "type": "variableInsert",
+          "displayName": "Set Mob Spawn Helmet"
+        }
+      ],
+      "outcomes": [
+        {
+          "message": "one year sub",
+          "type": "chat"
+        }
+      ],
+      "allowsOtherEventsToTrigger": true
+    },
+    "[VIEWER] Process Viewer Three year Sub": {
+      "conditions": [
+        {
+          "name": "[VIEWER] Viewer Subscriber Three Years",
+          "type": "constant",
+          "displayName": "Check for three year Sub"
+        },
+        {
+          "variableName": "viewer-mob-multiplier",
+          "variableInput": "3",
+          "type": "variableInsert",
+          "displayName": "Set Mob Spawn Multiplier"
+        },
+        {
+          "variableName": "viewer-mob-helmet",
+          "variableInput": "minecraft:iron_helmet",
+          "type": "variableInsert",
+          "displayName": "Set Mob Spawn Helmet"
+        }
+      ],
+      "outcomes": [],
+      "allowsOtherEventsToTrigger": true
+    },
+    "[VIEWER] Process Viewer Two Year Sub": {
+      "conditions": [
+        {
+          "name": "[VIEWER] Viewer Subscriber Two Years",
+          "type": "constant",
+          "displayName": "Check for Two Year Subscriptions"
+        },
+        {
+          "variableName": "viewer-mob-multiplier",
+          "variableInput": "2",
+          "type": "variableInsert",
+          "displayName": "Set Spawn Multiplier"
+        },
+        {
+          "variableName": "viewer-mob-helmet",
+          "variableInput": "minecraft:leather_helmet",
+          "type": "variableInsert",
+          "displayName": "Set Mob Spawn Helmet"
+        }
+      ],
+      "outcomes": [],
+      "allowsOtherEventsToTrigger": true
+    },
+    "[VIEWER] Spawn Raid or Follow Mob": {
+      "conditions": [],
+      "outcomes": [
+        {
+          "command": "/summon zombie ~ ~1 ~ {PersistenceRequired:1b,IsBaby:1b,CustomName:'{\"text\":\"$viewer-raid-mob-user\"}',ArmorItems:[{},{},{},{id:\"minecraft:chainmail_helmet\",Count:1b}]}",
+          "executeAsSelf": true,
+          "type": "command",
+          "displayName": "Spawn Mob"
+        }
+      ],
+      "allowsOtherEventsToTrigger": true
+    },
+    "[VIEWER] Spawn Viewer Action Mobs": {
+      "conditions": [
+        {
+          "name": "[VIEWER] Set Mob Spawn Command",
+          "type": "constant",
+          "displayName": "Generate the Mob spawn command"
+        },
+        {
+          "calc": "x",
+          "value1": "viewer-subscription-tier",
+          "value2": "viewer-mob-multiplier",
+          "variableName": "total-mob-spawn-count",
+          "type": "math",
+          "displayName": "Calculate Total number of mobs to spawn"
+        }
+      ],
+      "outcomes": [
+        {
+          "times": "$total-mob-spawn-count",
+          "outcome": {
+            "command": "$viewer-mob-spawn-command",
+            "executeAsSelf": true,
+            "type": "command",
+            "displayName": "Spawn Mobs"
+          },
+          "type": "repeat",
+          "displayName": "Loop Through to spawn the right number of mobs"
+        }
+      ],
+      "allowsOtherEventsToTrigger": true
+    }
+  }
+}

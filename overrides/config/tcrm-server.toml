@@ -1,0 +1,14 @@
+["The Crop Reaping Mod"]
+	#Requires seeds for auto planting?  Default: true
+	#eg: If you harvest carrots, then you must have carrots in player inventory/off-hand to auto-re-plant them
+	requiresSeeds = true
+	#When you reap a crop, the drops go straight into player inventory?  Default: true
+	giveDropsToPlayer = true
+	#Delete excess drops such as Wheat seeds and Beetroot seeds?  Default: false
+	#These items are set in tcrm:seeds_blacklist tag
+	deleteExcessSeeds = false
+	#Applied level of exhaustion to Player.  Default: 0.005
+	#eg: 4.0 seems to be half a drumstick on the health bar
+	# Default: 0.005
+	# Range: 0.0 ~ 10.0
+	foodExhaustion = 0.005

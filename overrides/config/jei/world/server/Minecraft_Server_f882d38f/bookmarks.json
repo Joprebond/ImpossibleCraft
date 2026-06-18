@@ -1,0 +1,9 @@
+[
+  {"version":2},
+  {"ingredient":{"id":"sophisticatedbackpacks:magnet_upgrade"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"apothic_enchanting:soul_touched_sculkshelf"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"minecraft:amethyst_shard"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"apothic_enchanting:geode_shelf"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"apothic_enchanting:melonshelf"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"easy_mob_farm:creative_mob_farm"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+]

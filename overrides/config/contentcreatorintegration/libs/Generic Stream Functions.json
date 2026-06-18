@@ -1,0 +1,73 @@
+{
+  "conditions": {
+    "New Condition": {
+      "type": "null"
+    }
+  },
+  "outcomes": {},
+  "events": {
+    "[STREAM] Reset Event Handler": {
+      "conditions": [],
+      "outcomes": [
+        {
+          "events": [
+            {
+              "name": "Call the Event Handler Reset",
+              "constantName": "[Events] Reset Events",
+              "conditions": [],
+              "outcomes": [],
+              "allowsOtherEventsToTrigger": true
+            },
+            {
+              "name": "Initialize the Stream Handler",
+              "constantName": "[Events] Initialize Event Handler",
+              "conditions": [],
+              "outcomes": [],
+              "allowsOtherEventsToTrigger": true
+            }
+          ],
+          "type": "event"
+        }
+      ],
+      "allowsOtherEventsToTrigger": true
+    },
+    "[STREAM] Stream Initialzie": {
+      "conditions": [],
+      "outcomes": [
+        {
+          "message": "Running Init on all CCI libraries",
+          "type": "chat",
+          "displayName": "Display Init For Stream"
+        },
+        {
+          "events": [
+            {
+              "name": "Initialize Event Handler",
+              "constantName": "[Events] Initialize Event Handler",
+              "conditions": [],
+              "outcomes": [],
+              "allowsOtherEventsToTrigger": true
+            },
+            {
+              "name": "Initialize Viewer Library",
+              "constantName": "[VIEWER] Initialize Viewer",
+              "conditions": [],
+              "outcomes": [],
+              "allowsOtherEventsToTrigger": true
+            },
+            {
+              "name": "Init HypeTrain",
+              "constantName": "[HypeTrain] Stream Initialize",
+              "conditions": [],
+              "outcomes": [],
+              "allowsOtherEventsToTrigger": true
+            }
+          ],
+          "type": "event",
+          "displayName": "Run Init Events"
+        }
+      ],
+      "allowsOtherEventsToTrigger": true
+    }
+  }
+}

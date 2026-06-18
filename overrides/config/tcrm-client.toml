@@ -1,0 +1,7 @@
+["The Crop Reaping Mod"]
+	#Show crop breaking particles?  Default: true
+	showFarticles = true
+	#Play crop breaking sounds?  Default: true
+	playSounds = true
+	#Show extra particles when using Axe, Shovel and Hoe?  Default: true
+	extraFarticles = true

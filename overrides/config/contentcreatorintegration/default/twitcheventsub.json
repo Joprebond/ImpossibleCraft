@@ -1,0 +1,727 @@
+{
+  "configs": [
+    {
+      "types": {
+        "end": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, prediction ended!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "progress": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, someone's contributed to the prediction!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "begin": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, new prediction!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "lock": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, prediction locked!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ]
+      },
+      "for": "channel.prediction"
+    },
+    {
+      "types": {
+        "outgoing": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, raiding out? Hope you had a good stream!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "incoming": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, you just got raided!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ]
+      },
+      "for": "channel.raid"
+    },
+    {
+      "types": {
+        "end": [
+          {
+            "name": "Stop the Hype Train",
+            "constantName": "[HypeTrain] End of the Hype Train",
+            "conditions": [],
+            "outcomes": [],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "begin": [
+          {
+            "name": "Start the hype Train",
+            "constantName": "[HypeTrain] Kick off the Hype Train",
+            "conditions": [],
+            "outcomes": [],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "progress": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hype train progress made!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ]
+      },
+      "for": "channel.hype_train"
+    },
+    {
+      "types": {
+        "add": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, a new channel points reward was created!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "update": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, a channel points reward has been updated!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "remove": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, a channel points reward has been removed!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ]
+      },
+      "for": "channel.channel_points_custom_reward"
+    },
+    {
+      "types": {
+        "stop": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, you've just stopped a charity campaign!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "progress": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, your charity campaign is progressing!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "start": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, you've just started a charity campaign!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "donate": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, someone just donated to your charity campaign!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ]
+      },
+      "for": "channel.charity_campaign"
+    },
+    {
+      "types": {
+        "update": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, your channel's been updated!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "cheer": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, someone's cheered in your chat!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "subscribe": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, new subscriber!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ]
+      },
+      "for": "channel"
+    },
+    {
+      "types": {
+        "add": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, someone just redeemed an automatic channel points reward!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ]
+      },
+      "for": "channel.channel_points_automatic_reward_redemption"
+    },
+    {
+      "types": {
+        "gift": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, someone gave subs out!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "end": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, someone's subscription ended :(",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "message": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, resub message!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ]
+      },
+      "for": "channel.subscription"
+    },
+    {
+      "types": {
+        "end": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, Guest Star session ended, hope you had fun!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "begin": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, new Guest Star session, have fun!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ]
+      },
+      "for": "channel.guest_star_session"
+    },
+    {
+      "types": {
+        "notification": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, something's just happened in chat!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "message": [
+          {
+            "disabled": true,
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "$chatter_user_name: $message_text",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "message_delete": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, someone's chat message was just removed!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "user_message_update": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, a message caught by AutoMod's status has been updated!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "clear_user_messages": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, someone's messages have just been cleared!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "user_message_hold": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, a message has been caught by AutoMod!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "clear": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, chat's been cleared!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ]
+      },
+      "for": "channel.chat"
+    },
+    {
+      "types": {
+        "begin": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, good luck with that new goal!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "end": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, you've just ended your goal, let's hope you've met it!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "progress": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, some progress made towards your goal!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ]
+      },
+      "for": "channel.goal"
+    },
+    {
+      "types": {
+        "end": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, shared chat ended!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "update": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, an update to shared chat!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "begin": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, sharing chats huh? Enjoy the collab!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ]
+      },
+      "for": "channel.shared_chat"
+    },
+    {
+      "types": {
+        "offline": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, stream offline!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "online": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, stream online!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ]
+      },
+      "for": "stream"
+    },
+    {
+      "types": {
+        "update": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, Guest Star host preferences updated!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ]
+      },
+      "for": "channel.guest_star_settings"
+    },
+    {
+      "types": {
+        "update": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, your chat settings have been updated!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ]
+      },
+      "for": "channel.chat_settings"
+    },
+    {
+      "types": {
+        "use": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, someone just used Bits on your channel!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ]
+      },
+      "for": "channel.bits"
+    },
+    {
+      "types": {
+        "begin": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, an ad break is starting!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ]
+      },
+      "for": "channel.ad_break"
+    },
+    {
+      "types": {
+        "update": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, there's been an update to your guest!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ]
+      },
+      "for": "channel.guest_star_guest"
+    },
+    {
+      "types": {
+        "add": [
+          {
+            "disabled": true,
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, someone just redeemed a channel points reward!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          },
+          {
+            "name": "Spawn-A-Pet",
+            "conditions": [
+              {
+                "variableName": "reward_id",
+                "variableResult": "351d4056-560e-4bd0-9232-66f9c42191f3",
+                "type": "variableCheck",
+                "displayName": "Check For Reward"
+              }
+            ],
+            "outcomes": [
+              {
+                "events": [
+                  {
+                    "constantName": "[ACTION] Spawn A Pet",
+                    "conditions": [],
+                    "outcomes": [],
+                    "allowsOtherEventsToTrigger": true
+                  }
+                ],
+                "type": "event"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "update": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, a redeemed a channel points reward has just been updated!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ]
+      },
+      "for": "channel.channel_points_custom_reward_redemption"
+    },
+    {
+      "types": {
+        "begin": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, new poll!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "end": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, poll ended!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "progress": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, progress on the poll!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ]
+      },
+      "for": "channel.poll"
+    }
+  ],
+  "init": [],
+  "type": "twitcheventsub"
+}

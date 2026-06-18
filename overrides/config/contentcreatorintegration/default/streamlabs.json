@@ -1,0 +1,441 @@
+{
+  "configs": [
+    {
+      "types": {
+        "bits": [
+          {
+            "name": "[CCI2] 0100 - 0199 - Potions",
+            "conditions": [
+              {
+                "min": 100.0,
+                "max": 199.0,
+                "type": "range",
+                "displayName": "Check The bits amount"
+              },
+              {
+                "name": "[HypeTrain] Check if Hype Train is inactive",
+                "type": "constant",
+                "displayName": "Make sure HypeTrain is inactive"
+              },
+              {
+                "name": "[ViewerReward] Set Custom User Flag",
+                "type": "constant",
+                "displayName": "Set Flag for uncapped"
+              }
+            ],
+            "outcomes": [
+              {
+                "times": "2",
+                "outcome": {
+                  "events": [
+                    {
+                      "name": "Spawn the Mobs",
+                      "constantName": "[ACTION] Spawn Mobs",
+                      "conditions": [],
+                      "outcomes": [],
+                      "allowsOtherEventsToTrigger": true
+                    }
+                  ],
+                  "type": "event"
+                },
+                "type": "repeat",
+                "displayName": "Spawn The Mobs Loop"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          },
+          {
+            "name": "[CCI2] 0200 - 0499 - Mobs",
+            "conditions": [
+              {
+                "min": 200.0,
+                "max": 499.0,
+                "type": "range",
+                "displayName": "Check for 200 to 499 bits"
+              },
+              {
+                "name": "[HypeTrain] Check if Hype Train is inactive",
+                "type": "constant",
+                "displayName": "Make sure hypetrain is inactive"
+              },
+              {
+                "name": "[ViewerReward] Set Custom User Flag",
+                "type": "constant",
+                "displayName": "Set Flag"
+              }
+            ],
+            "outcomes": [
+              {
+                "times": "3",
+                "outcome": {
+                  "events": [
+                    {
+                      "name": "Do Mob spawns for Bit action",
+                      "constantName": "[ACTION] Spawn Mobs",
+                      "conditions": [],
+                      "outcomes": [],
+                      "allowsOtherEventsToTrigger": true
+                    }
+                  ],
+                  "type": "event"
+                },
+                "type": "repeat",
+                "displayName": "Do the Repeat for the bits"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          },
+          {
+            "name": "[CCI2] 0500 - 0749 - Mobs",
+            "conditions": [
+              {
+                "min": 500.0,
+                "max": 749.0,
+                "type": "range",
+                "displayName": "Check 500 to 749 bits"
+              },
+              {
+                "name": "[HypeTrain] Check if Hype Train is inactive",
+                "type": "constant",
+                "displayName": "Make sure hypetrain is not active"
+              },
+              {
+                "name": "[ViewerReward] Set Custom User Flag",
+                "type": "constant"
+              }
+            ],
+            "outcomes": [
+              {
+                "times": "4",
+                "outcome": {
+                  "events": [
+                    {
+                      "name": "Do the mob spawn",
+                      "constantName": "[ACTION] Spawn Mobs",
+                      "conditions": [],
+                      "outcomes": [],
+                      "allowsOtherEventsToTrigger": true
+                    }
+                  ],
+                  "type": "event",
+                  "displayName": "Do Mob Spawns bit action"
+                },
+                "type": "repeat",
+                "displayName": "Repeat the 500 to 749 bit mobs"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          },
+          {
+            "name": "[CCI2] 0750 to 999 - Mobs",
+            "conditions": [
+              {
+                "min": 750.0,
+                "max": 999.0,
+                "type": "range",
+                "displayName": "Check for 750 to 999 bits"
+              },
+              {
+                "name": "[HypeTrain] Check if Hype Train is inactive",
+                "type": "constant",
+                "displayName": "Make sure hypetrain is not active"
+              },
+              {
+                "name": "[ViewerReward] Set Custom User Flag",
+                "type": "constant"
+              }
+            ],
+            "outcomes": [
+              {
+                "times": "5",
+                "outcome": {
+                  "events": [
+                    {
+                      "constantName": "[ACTION] Spawn Mobs",
+                      "conditions": [],
+                      "outcomes": [],
+                      "allowsOtherEventsToTrigger": true
+                    }
+                  ],
+                  "type": "event"
+                },
+                "type": "repeat",
+                "displayName": "Repeat 750 to 999 bit mobs"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          },
+          {
+            "name": "[CCI2] 1000 to (Rest) - Mobs",
+            "conditions": [
+              {
+                "min": 1000.0,
+                "type": "range",
+                "displayName": "Check for 1000 to (Rest) Bits"
+              },
+              {
+                "name": "[HypeTrain] Check if Hype Train is inactive",
+                "type": "constant",
+                "displayName": "Make sure hypetrain is not active"
+              },
+              {
+                "name": "[ViewerReward] Set Custom User Flag",
+                "type": "constant"
+              }
+            ],
+            "outcomes": [
+              {
+                "times": "6",
+                "outcome": {
+                  "events": [
+                    {
+                      "name": "Do the mob spawns",
+                      "constantName": "[ACTION] Spawn Mobs",
+                      "conditions": [],
+                      "outcomes": [],
+                      "allowsOtherEventsToTrigger": true
+                    }
+                  ],
+                  "type": "event",
+                  "displayName": "Event Outcome for Bit action"
+                },
+                "type": "repeat",
+                "displayName": "Repeat for 1000 to (Rest)  bits"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          },
+          {
+            "name": "[CCI2] Do Hype Train Spawns",
+            "conditions": [
+              {
+                "name": "[HypeTrain] Check if Hype Train is Active",
+                "type": "constant",
+                "displayName": "Make sure hype train is active"
+              },
+              {
+                "variableName": "xp-gained",
+                "variableInput": "10",
+                "type": "variableInsert",
+                "displayName": "Set XP value"
+              }
+            ],
+            "outcomes": [
+              {
+                "events": [
+                  {
+                    "name": "Set Jopre's player name",
+                    "constantName": "[ACTION] Set Jopre's Player Name",
+                    "conditions": [],
+                    "outcomes": [],
+                    "allowsOtherEventsToTrigger": true
+                  },
+                  {
+                    "name": "Do the spawns",
+                    "constantName": "[HypeTrain] Handle Bits Action",
+                    "conditions": [],
+                    "outcomes": [],
+                    "allowsOtherEventsToTrigger": true
+                  },
+                  {
+                    "name": "Set Storm's Player Name",
+                    "constantName": "[ACTION] Set Storm's Player Name",
+                    "conditions": [],
+                    "outcomes": [],
+                    "allowsOtherEventsToTrigger": true
+                  },
+                  {
+                    "name": "Do Storms Spawns",
+                    "constantName": "[HypeTrain] Handle Bits Action",
+                    "conditions": [],
+                    "outcomes": [],
+                    "allowsOtherEventsToTrigger": true
+                  },
+                  {
+                    "name": "Add the XP to the total",
+                    "constantName": "[Events] Add XP",
+                    "conditions": [],
+                    "outcomes": [],
+                    "allowsOtherEventsToTrigger": true
+                  }
+                ],
+                "type": "event"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "subMysteryGift": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, $name just gave out $amount subs!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true,
+            "playTime": "20"
+          }
+        ],
+        "subscription": [
+          {
+            "name": "Do non hypetrain subscriptions",
+            "conditions": [
+              {
+                "name": "[HypeTrain] Check if Hype Train is inactive",
+                "type": "constant",
+                "displayName": "Make sure hypetrain is not active"
+              }
+            ],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, $user just subscribed for $amount months!",
+                "type": "chat"
+              },
+              {
+                "events": [
+                  {
+                    "name": "Do Sub Actions",
+                    "constantName": "[VIEWER] Process Subscriber Action",
+                    "conditions": [],
+                    "outcomes": [],
+                    "allowsOtherEventsToTrigger": true
+                  }
+                ],
+                "type": "event",
+                "displayName": "Subscriber Action"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true,
+            "playTime": "20"
+          },
+          {
+            "name": "Do Hype Train Spawns",
+            "conditions": [
+              {
+                "name": "[HypeTrain] Check if Hype Train is Active",
+                "type": "constant",
+                "displayName": "Verify the hype train is active"
+              },
+              {
+                "variableName": "xp-gained",
+                "variableInput": "40",
+                "type": "variableInsert",
+                "displayName": "Set the XP gained"
+              }
+            ],
+            "outcomes": [
+              {
+                "events": [
+                  {
+                    "name": "Do the Subscriber Action",
+                    "constantName": "[HypeTrain] Process Subscriber Action",
+                    "conditions": [],
+                    "outcomes": [],
+                    "allowsOtherEventsToTrigger": true
+                  },
+                  {
+                    "name": "Add the XP to the total",
+                    "constantName": "[Events] Add XP",
+                    "conditions": [],
+                    "outcomes": [],
+                    "allowsOtherEventsToTrigger": true
+                  }
+                ],
+                "type": "event"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ],
+        "follow": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, $user just followed!",
+                "type": "chat"
+              },
+              {
+                "name": "NewFollower",
+                "type": "constant"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true,
+            "playTime": "20"
+          }
+        ],
+        "host": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, $user just hosted you for up to $amount viewers!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true,
+            "playTime": "20"
+          }
+        ],
+        "raid": [
+          {
+            "name": "[CCI2] Handle Raids",
+            "conditions": [],
+            "outcomes": [
+              {
+                "events": [
+                  {
+                    "name": "Handle The Raid",
+                    "constantName": "[VIEWER] Process Raid Mob",
+                    "conditions": [],
+                    "outcomes": [],
+                    "allowsOtherEventsToTrigger": true
+                  }
+                ],
+                "type": "event",
+                "displayName": "Process Event Outcomes for the raid"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ]
+      },
+      "queue": [
+        "host+subscription+bits",
+        "follow"
+      ],
+      "for": "twitch_account"
+    },
+    {
+      "types": {
+        "donation": [
+          {
+            "conditions": [],
+            "outcomes": [
+              {
+                "message": "Hey $streamer, $user just tipped $formatted_amount!",
+                "type": "chat"
+              }
+            ],
+            "allowsOtherEventsToTrigger": true
+          }
+        ]
+      },
+      "ignoredTypes": [
+        "streamlabels",
+        "streamlabels.underlying"
+      ]
+    }
+  ],
+  "init": [
+    {
+      "constantName": "[STREAM] Stream Initialzie",
+      "conditions": [],
+      "outcomes": [],
+      "allowsOtherEventsToTrigger": true
+    }
+  ],
+  "type": "streamlabs"
+}
